@@ -1,13 +1,29 @@
-// return the valid year
-// return validity of the year range
-// return if year is leap year or not.
+// scope of the class Year:
+// return the valid year | Boolean
+// return validity of the year range | Boolean
+// return current year | Number
+
+import moment from "moment";
+import _ from 'lodash';
 
 export default class Year {
-  constructor(year) {
-    this.year = checkIfValidYear(year);
+  constructor({year = null} = {}) {
+    this.year = collectCurrentYear(year);
   }
 
-  checkIfValidYear = (year) => {
-    return true;
+  collectCurrentYear = (year) =>{
+    if(this.checkAndReturnValidYear) return year;
+
+    return moment().year();
+  }
+
+  checkAndReturnValidYear = (year) => {
+    if(year === null) return false;
+
+    const currentYear = moment().year();
+
+    if(year === currentYear || year > currentYear) return true;
+
+    return false;
   }
 }
