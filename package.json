@@ -1,0 +1,20 @@
+{
+  "name": "woodpecker-calendar",
+  "version": "0.0.1",
+  "description": "Code Name 'white naped woodpecker' is a calendar system to book slots for the events and reservations. ",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "Booking",
+    "Calendar",
+    "Reservation"
+  ],
+  "author": "Mahabub Islam Prio",
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "moment": "^2.29.4"
+  }
+}
