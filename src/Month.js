@@ -30,7 +30,7 @@ export default class Month {
   }
 
   // returns the current month
-  currentMonth = () => {
+  currentMonthString = () => {
     const monthName = moment().startOf('month').format(this.monthFormat);
 
     return monthName;

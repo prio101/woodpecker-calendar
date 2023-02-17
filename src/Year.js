@@ -8,7 +8,7 @@ import _ from 'lodash';
 
 export default class Year {
   constructor({year = null} = {}) {
-    this.year = collectCurrentYear(year);
+    this.year = year;
   }
 
   collectCurrentYear = (year) =>{
