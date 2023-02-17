@@ -1,17 +1,18 @@
 import moment from "moment";
 import _ from 'lodash';
 
-// get the current month
-// get the days list from the current month
-// checker: if valid month
+// get the current month // Number -> 01
+// get the days list from the current month: // List -> [{ date: 01, day: Wed }]
+// checker: if valid month // Boolean -> True
 
 export default class Month {
 
 
-  constructor({month = null, accumalator = 1} = {}) {
+  constructor({month = null, accumalator = 1, monthFormat = 'MMMM'} = {}) {
     // Number of the month
     this.month = checkIfValidMonth(month);
     this.accumalator = accumalator;
+    this.monthFormat = monthFormat;
   }
 
   // check if the number is the valid one: Number
@@ -30,12 +31,13 @@ export default class Month {
 
   // returns the current month
   currentMonth = () => {
-    moment().month();
+    const monthName = moment().startOf('month').format(this.monthFormat);
+
+    return monthName;
   }
 
-
   // return the list of days for the current month
-  // example: [ { date: 1, day: 'fryday'}, ....]
+  // example: [ { date: 1, day: 'friday'}, ....]
   currentMonthDaysList = () => {
     let numberOfDaysInMonth = moment().daysInMonth();
 
