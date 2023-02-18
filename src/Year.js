@@ -11,18 +11,17 @@ export default class Year {
     this.year = year;
   }
 
-  collectCurrentYear = (year) =>{
-    if(this.checkAndReturnValidYear) return year;
-
-    return moment().year();
+  collectCurrentYear = () =>{
+    return _.toInteger(moment().format('YYYY'));
   }
 
-  checkAndReturnValidYear = (year) => {
-    if(year === null) return false;
+  checkAndReturnValidYear = () => {
+    if(this.year === null) return false;
 
-    const currentYear = moment().year();
+    const currentYear = _.toInteger(moment().format('YYYY'));
 
-    if(year === currentYear || year > currentYear) return true;
+    if(this.year === currentYear) return true;
+    if(this.year > currentYear) return true;
 
     return false;
   }

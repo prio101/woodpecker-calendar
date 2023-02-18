@@ -10,23 +10,23 @@ export default class Month {
 
   constructor({month = null, accumalator = 1, monthFormat = 'MMMM'} = {}) {
     // Number of the month
-    this.month = checkIfValidMonth(month);
+    this.month = month;
     this.accumalator = accumalator;
     this.monthFormat = monthFormat;
   }
 
   // check if the number is the valid one: Number
-  checkIfValidMonth = (monthNumber) => {
-    arraryOfMonthList = _.range(1,13);
+  checkIfValidMonth = () => {
+    let arraryOfMonthList = _.range(1,13);
 
-    if(_.includes(arraryOfMonthList, monthNumber)) return monthNumber ;
+    if(_.includes(arraryOfMonthList, this.month)) return true ;
 
-    return this.currentMonth;
+    return false;
   }
 
   // returns the current month
   currentMonth = () => {
-    moment().month();
+    return moment().month();
   }
 
   // returns the current month
@@ -39,6 +39,8 @@ export default class Month {
   // return the list of days for the current month
   // example: [ { date: 1, day: 'friday'}, ....]
   currentMonthDaysList = () => {
+    if(!this.checkIfValidMonth()) return "Invalid Month Selected";
+
     let numberOfDaysInMonth = moment().daysInMonth();
 
     let daysList = [];

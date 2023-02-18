@@ -4,9 +4,9 @@
   "description": "Code Name 'white naped woodpecker' is a calendar system to book slots for the events and reservations. ",
   "main": "index.js",
   "scripts": {
-    "build": "babel index.js -d dist",
+    "build": "babel src test -d dist",
     "start": "npm run build && node dist/index.js",
-    "test": "test"
+    "test": "jest"
   },
   "keywords": [
     "Booking",
@@ -22,6 +22,7 @@
   "devDependencies": {
     "@babel/cli": "^7.20.7",
     "@babel/core": "^7.20.12",
-    "@babel/preset-env": "^7.20.2"
+    "@babel/preset-env": "^7.20.2",
+    "jest": "^29.4.3"
   }
 }
