@@ -49,11 +49,11 @@ export default class Month {
     const dateMonth = moment().startOf('month');
 
     _.range(numberOfDaysInMonth).map(() => {
-      dayMap = { date: dateMonth.format('dd'), day: dateMonth.format('DDD') };
+      dayMap = { date: dateMonth.format('D'), day: dateMonth.format('DDD') };
       daysList.push(dayMap);
       dateMonth.add(this.accumalator, 'day');
     });
-
+    daysList
     return daysList;
   }
 }
