@@ -12,6 +12,3 @@ let listOfBookedPartialDates = [10,20];
 
 let listOfBookedSlots = [];
 
-let year = new Year({ year: 2023 });
-console.log(year.checkAndReturnValidYear());
-console.log(year.collectCurrentYear());
