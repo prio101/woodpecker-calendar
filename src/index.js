@@ -4,7 +4,7 @@ import moment from 'moment';
 import Calendar from './Calendar';
 import Month from './Month';
 import Year from './Year';
-import { TimeSlots } from './TimeSlots';
+import TimeSlots from './TimeSlots';
 
 let listOfBookedWholeDates = [1,2,3];
 let listOfBookedPartialDates = [10,20];
