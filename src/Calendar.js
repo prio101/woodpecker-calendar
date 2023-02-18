@@ -3,6 +3,7 @@ import _ from 'lodash';
 
 import Month from "./Month";
 import Year from "./Year";
+import TimeSlots from './TimeSlots';
 
 
 
@@ -35,7 +36,8 @@ export default class Calendar {
                day: 'wed',
                date: 01,
                partially_booked: true | false,
-               totally_booked: true | false
+               totally_booked: true | false,
+               timeSlots: []
              }
   */
   getListOfMonthDaysAsResponse = () => {
@@ -53,12 +55,22 @@ export default class Calendar {
       this.addDataWeekend(dayObject);
       this.addDataHoliday(dayObject);
       this.addDataTotallyBooked(dayObject);
+      this.addTimeSlots(dayObject);
     })
 
     return dayList;
   }
 
-  // * object: { day: 'fri', date: 01 }
+  // * object: { day: 'fri', date: 1  }
+  addTimeSlots = (dayObject) => {
+    let timeSlots = new TimeSlots({ bookedSlots: this.listOfBookedSlots });
+
+    dayObject.timeSlots = timeSlots.generateResponse();
+
+    return dayObject;
+  }
+
+  // * object: { day: 'fri', date: 1 }
   addDataTotallyBooked = (dayObject) => {
     dayObject.totallyBooked = _.includes( this.listOfBookedDates, dayObject.date );
     return dayObject;

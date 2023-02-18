@@ -121,6 +121,26 @@ describe('#addDataHoliday', () => {
   });
 });
 
+describe('#addTimeSlots', () => {
+  let calendar = new Calendar({
+    currentSelectedYear: 2023,
+    currentSelectedmonth: 1,
+    holidays: [1, 10],
+    listOfBookedSlots: [9]
+  });
+
+  describe('with valid input set', () => {
+
+    let dayObject = { day: 'sat', date: 1 };
+    let expectedDayObject = { day: 'sat', date: 28, timeSlots: [ { "booked": true, "slot": 9}] }
+
+    test('should return true for the input', () => {
+      expect(calendar.addTimeSlots(dayObject).timeSlots[0].booked).toBe(expectedDayObject.timeSlots[0].booked);
+      expect(calendar.addTimeSlots(dayObject).timeSlots[0].slot).toBe(expectedDayObject.timeSlots[0].slot);
+    });
+  });
+});
+
 describe('#addDataTotallyBooked', () => {
   let calendar = new Calendar({
     currentSelectedYear: 2023,
