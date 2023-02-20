@@ -12,7 +12,7 @@ export default class Calendar {
               currentSelectedYear: currentSelectedYear,
               currentSelectedmonth: currentSelectedMonth,
               listOfBookedDates = [],
-              listOfBookedSlots = [],
+              listOfBookedSlots = [], // I need to fix this-> separate for every day
               weekends = ['fri', 'sat'],
               holidays = [] } = {}) {
 
@@ -34,10 +34,10 @@ export default class Calendar {
                weekend: true | false,
                holiday: true | false,
                day: 'wed',
-               date: 01,
+               date: 1 | 20,
                partially_booked: true | false,
                totally_booked: true | false,
-               timeSlots: []
+               timeSlots: [9,15]
              }
   */
   getListOfMonthDaysAsResponse = () => {

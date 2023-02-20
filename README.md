@@ -16,6 +16,14 @@ Has options like whole day booking or single slot booking.
 - [x] Test Coverage
 - [x] Calendar DataSet.
 - [x] Pre-Selected Dates.
-- [ ] Pre-Selected Slots.
-- [ ] Select Minimum range of the Time Slots.
-- [ ] Select Minimum range of the Dates.
+- [x] Pre-Selected Slots.
+- [x] Select Minimum range of the Time Slots.
+- [x] Select Minimum range of the Dates.
+
+### NEXT:
+ - Create a demo project with HTML + CSS + PACKAGE.
+ - Create the separate timeslots for the days.
+ - Create the Calender Views.
+ - Example: Vertical Calendar, TailWind.
+
+

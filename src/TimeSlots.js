@@ -23,6 +23,7 @@ export default class TimeSlots {
     this.bookedSlots = bookedSlots;
   }
 
+  // * { booked: true | false, slot: 9 }
   generateResponse = () => {
     let timeSlotsRange = this.createTimeRange();
 
@@ -41,13 +42,14 @@ export default class TimeSlots {
 
     return timeSlotMapResults;
   }
-
+  // * range: [0,1,2..24]
   createTimeRange = () => {
     let timeSlotsRange = _.range(this.openingHour, this.closingHour);
 
     return timeSlotsRange;
   }
 
+  // boolean
   isReserved = (slot) => {
     return _.includes(this.bookedSlots, slot);
   }
