@@ -1,6 +1,6 @@
 {
   "name": "woodpecker-calendar",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Code Name 'white naped woodpecker' is a calendar system to book slots for the events and reservations. ",
   "main": "index.js",
   "scripts": {
